@@ -1,0 +1,25 @@
+<!-- header.component.html -->
+<nav>
+  <div>
+    <a routerLink="/" routerLinkActive="active-link">
+      <img src="/assets/images/logo.png" alt="Logo" />
+    </a>
+    <ul>
+      <li>
+        <a [class.active-link]="activeLink === 'posts'" routerLink="/posts"
+          >Posts</a
+        >
+      </li>
+      <li>
+        <a [class.active-link]="activeLink === 'albums'" routerLink="/albums"
+          >Albums</a
+        >
+      </li>
+      <li>
+        <a [class.active-link]="activeLink === 'todos'" routerLink="/todos"
+          >Todos</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>

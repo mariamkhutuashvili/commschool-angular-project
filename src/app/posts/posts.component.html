@@ -1,0 +1,18 @@
+<div>
+  <button (click)="showAddForm = !showAddForm">Add Post</button>
+</div>
+<div *ngIf="showAddForm">
+  <app-addpost (postAdded)="onPostAdded()"></app-addpost>
+</div>
+<table>
+  <tr>
+    <th>POST'S AUTHOR</th>
+    <th>TITLE</th>
+    <th>BODY</th>
+  </tr>
+  <tr *ngFor="let post of posts" (click)="onPost(post.id)">
+    <td>{{ getUsers(post.userId) }}</td>
+    <td>{{ post.title }}</td>
+    <td>{{ post.body }}</td>
+  </tr>
+</table>

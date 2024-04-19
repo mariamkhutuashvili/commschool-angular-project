@@ -1,0 +1,45 @@
+<div>
+  <div id="editing">
+    <i
+      *ngIf="!isEditMode"
+      class="fa-solid fa-arrow-left"
+      (click)="goBack()"
+    ></i>
+    <div *ngIf="showError && !post.title.trim()" style="color: red">
+      A title is required
+    </div>
+
+    <label for="title">Title</label>
+    <input
+      id="title"
+      type="text"
+      [(ngModel)]="post.title"
+      [ngClass]="{
+        'input-editable': isEditMode,
+        'input-non-editable': !isEditMode
+      }"
+    />
+
+    <div *ngIf="showError && !post.body.trim()" style="color: red">
+      Body text is required
+    </div>
+    <label for="body">Body</label>
+    <textarea
+      id="body"
+      [(ngModel)]="post.body"
+      cols="30"
+      rows="6"
+      [ngClass]="{
+        'textarea-editable': isEditMode,
+        'textarea-non-editable': !isEditMode
+      }"
+    ></textarea>
+
+    <button *ngIf="isEditMode" class="cancel-button" (click)="cancelEdit()">
+      X
+    </button>
+    <button *ngIf="isEditMode" (click)="updatePost()">Update</button>
+    <button *ngIf="!isEditMode" (click)="toggleEdit()">Edit</button>
+  </div>
+  <app-comments></app-comments>
+</div>

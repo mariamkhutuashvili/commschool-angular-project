@@ -1,0 +1,41 @@
+<div>
+  <form (ngSubmit)="addPost()">
+    <label for="author">Post Author</label>
+    <input
+      id="author"
+      type="text"
+      [(ngModel)]="newUserName"
+      name="postUser"
+      required
+    />
+    <div *ngIf="showError && !newUserName.trim()" style="color: red">
+      Post author is required
+    </div>
+
+    <label for="title">Title</label>
+    <input
+      id="title"
+      type="text"
+      [(ngModel)]="newPost.title"
+      name="postTitle"
+      required
+    />
+    <div *ngIf="showError && !newPost.title.trim()" style="color: red">
+      A title is required
+    </div>
+
+    <label for="body">Body</label>
+    <input
+      id="body"
+      type="text"
+      [(ngModel)]="newPost.body"
+      name="postBody"
+      required
+    />
+    <div *ngIf="showError && !newPost.body.trim()" style="color: red">
+      Body text is required
+    </div>
+
+    <button type="submit">Add</button>
+  </form>
+</div>

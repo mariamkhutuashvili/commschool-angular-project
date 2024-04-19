@@ -1,0 +1,40 @@
+@import "../../styles/variables";
+
+.container {
+  position: relative;
+  top: 100px;
+  .content {
+    display: flex;
+    margin: 20px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    box-shadow: 4px 4px 1px 0 $purple-color;
+    .task {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      span {
+        color: $title-color;
+        font-weight: 700;
+      }
+      p {
+        display: flex;
+        font-weight: 700;
+        gap: 10px;
+      }
+      div {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        .fa-xmark {
+          color: $red-color;
+        }
+
+        .fa-check {
+          color: $green-color;
+        }
+      }
+    }
+  }
+}

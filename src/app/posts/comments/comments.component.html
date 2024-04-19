@@ -1,0 +1,32 @@
+<div id="comments">
+  <div class="commentCards" *ngFor="let comment of comments">
+    <img src="../assets/images/user.jpg" alt="" />
+    <div>
+      <h4>{{ comment.name }}</h4>
+      <p>{{ comment.body }}</p>
+    </div>
+  </div>
+</div>
+<div>
+  <h5>Add Comment</h5>
+  <div id="addComments">
+    <img src="../assets/images/user.jpg" alt="" />
+    <div>
+      <label for="name">Name</label>
+      <input id="name" type="text" [(ngModel)]="newCommentName" />
+
+      <div *ngIf="showError && !newCommentName.trim()" style="color: red">
+        The name field is required
+      </div>
+
+      <label for="body2">Body</label>
+      <input id="body2" type="text" [(ngModel)]="newCommentBody" />
+
+      <div *ngIf="showError && !newCommentBody.trim()" style="color: red">
+        Body text is required
+      </div>
+
+      <button (click)="addComment()">Add</button>
+    </div>
+  </div>
+</div>

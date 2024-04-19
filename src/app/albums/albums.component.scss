@@ -1,0 +1,28 @@
+@import "../../styles/variables";
+
+table {
+  position: relative;
+  width: 100%;
+  top: 120px;
+  border-collapse: collapse;
+  th {
+    text-align: center;
+    padding: 15px;
+    width: 33.33%;
+    color: $secondary-color;
+    background-color: $primary-color;
+    border: none;
+  }
+  td {
+    padding: 10px;
+    width: 33.33%;
+    cursor: pointer;
+    border: 1px solid $secondary-color;
+  }
+  tr {
+    background-color: white;
+  }
+  tr:nth-child(odd) {
+    background-color: $secondary-color;
+  }
+}
